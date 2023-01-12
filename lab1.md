@@ -11,7 +11,7 @@ Nitya Pillai | CSE 15L Thursday 10 am B270
 
 ![Image](./images/vscodeLanding.png)
 
-5. Then, go to the top navigation bar, click terminal, then click open new terminal.
+5. Then, go to the top navigation bar. Click "terminal", then "new terminal".
 
 ![Image](./images/vscodeTerminal.png)
 
