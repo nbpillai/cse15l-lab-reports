@@ -6,7 +6,7 @@ Nitya Pillai | CSE 15L Thursday 10 am B270
 3. Click the download button
 ![Image](./images/vscodeDownload.png)
 4. Once VSCode is downloaded, open the application. You should see a screen like this:
-![Image]()
+![Image](./images/vscodeLanding.png)
 5. Then, go to the top navigation bar, click terminal, then click open new terminal.
 ![Image]()
 Once you have your terminal open, you're ready to try remotely connecting. 
