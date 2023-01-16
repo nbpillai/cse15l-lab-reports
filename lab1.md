@@ -7,11 +7,11 @@ Nitya Pillai | CSE 15L Thursday 10 am B270
 
 ![Image](./images/vscodeDownload.png)
 
-4. Once VSCode is downloaded, open the application. You should see a screen like this:
+Once VSCode is downloaded, open the application. You should see a screen like this:
 
 ![Image](./images/vscodeLanding.png)
 
-5. Then, go to the top navigation bar. Click "terminal", then "new terminal".
+Then, go to the top navigation bar. Click "terminal", then "new terminal".
 
 ![Image](./images/vscodeTerminal.png)
 
