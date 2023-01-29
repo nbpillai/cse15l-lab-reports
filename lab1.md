@@ -23,17 +23,17 @@ Once you have your terminal open, you're ready to try remotely connecting.
 3. Once your password has updated,you should  see a screen with your account lookup results:
 ![Image](./images/accountLookup.png)
 4. Copy the contents of course specific ID and return to the VSCode terminal you opened in the previous section. 
-5. Type the following command into the terminal: ssh [YOUR_COPIED_COURSE_SPECIFIC_ID]@ieng6.ucsd.edu 
+5. Type the following command into the terminal: ```ssh [YOUR_COPIED_COURSE_SPECIFIC_ID]@ieng6.ucsd.edu```
 6. When promped "Are you sure you want to continue connecting?", type yes and enter your NEW password.
 7. You should see an output like below. You are now connected to the remote server!
 
 ![Image](./images/loggedinSSH.png)
 
 ## Trying Some Commands
-- In order to display the current working directory, type "pwd" in the terminal. 
-- If you want to list all the files in a directory, use the "ls" command. 
-- To copy files into a directory, use the "cp" command.
-- If you want to display the contents of a file, use the "cat" command.
-- Use the "exit" command when you are finished to log out. 
+- In order to display the current working directory, type ```pwd``` in the terminal. 
+- If you want to list all the files in a directory, use the ```ls``` command. 
+- To copy files into a directory, use the ```cp``` command.
+- If you want to display the contents of a file, use the ```cat``` command.
+- Use the ```exit``` command when you are finished to log out. 
 
 ![Image](./images/sampleCommands.png)
