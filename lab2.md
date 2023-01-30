@@ -56,7 +56,7 @@ In the second screenshotted output below, the user adds another message after th
 
 ![Image](./images/lab2ss1.png)
 
-##Part 2: Bugs from Lab 3
+## Part 2: Bugs from Lab 3
 Failure Inducing Input
 ```
 import static org.junit.Assert.*;
