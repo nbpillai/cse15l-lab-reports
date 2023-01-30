@@ -5,7 +5,7 @@ In the screenshotted output below, the ```handleRequest``` method is called in m
 
 ![Image](./images/lab2ss2.png)
 
-In my code, I defined a variable ```str``` to hold the string that will be added to and outputted on the page. It is initially initialized as empty. However, by passing '''/add-message?s=hello''' as an argument in the handleRequest method, ```str``` is updated to be ```hello```.
+In my code, I defined a variable ```str``` to hold the string that will be added to and outputted on the page. It is initially initialized as empty. However, by passing ```/add-message?s=hello``` as an argument in the handleRequest method, ```str``` is updated to be ```hello```.
 
 ```
 import java.io.IOException;
