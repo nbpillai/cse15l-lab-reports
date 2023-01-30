@@ -1,6 +1,6 @@
 # Lab Report 2
 Nitya Pillai | CSE 15L Thursday 10 am B270
-## StringServer
+## Part 1: StringServer
 In the screenshotted output below, the ```handleRequest``` method is called in my code. This method takes a parameter of ```URI url```. This parameter is essentially the URL that the user types in. We will preform checks on this URL in the method in order to produce specific outputs on the page. In this case, the argument passed to the method would be the path, '''/add-message?s=hello'''.
 
 ![Image](./images/lab2ss2.png)
@@ -52,6 +52,103 @@ class StringServer {
 }
 ```
 
-In the second screenshotted output below, the user adds another message after their previous one. This once again calls the ```handleRequest(URI url)``` method in the Handler class. This time, ```str``` already holds a value from the previous input ```hello```. Since "/add-message" is part of the URL passed into the method ```/add-message?s=How are you``` and the path has the appropriate formatting with "s=", the ```How are you``` is appended to ```str```. The updated value of ``str``` is returned and outputted to the page as seen below.
+In the second screenshotted output below, the user adds another message after their previous one. This once again calls the ```handleRequest(URI url)``` method in the Handler class. This time, ```str``` already holds a value from the previous input ```hello```. Since "/add-message" is part of the URL passed into the method ```/add-message?s=How are you``` and the path has the appropriate formatting with "s=", the ```How are you``` is appended to ```str```. The updated value of ```str``` is returned and outputted to the page as seen below.
 
 ![Image](./images/lab2ss1.png)
+
+##Part 2: Bugs from Lab 3
+Failure Inducing Input
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class ArrayTests {
+	@Test 
+	public void testReverseInPlace() {
+        int[] input2 = {3, 4, 5, 6};
+        ArrayExamples.reverseInPlace(input2);
+        assertArrayEquals(new int[]{6, 5, 4, 3}, input2);
+	}
+}
+```
+```
+public class ArrayExamples {
+
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length - 1; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+}
+```
+The purpose of the ```reverseInPlace``` method is to reverse the given array of integers, modifying the array passed as an argument to the method. Here, the failure inducing input occurs when the array contains more than one element. Looping through the array, elements are being modified. However, because of this, since the value of later elements in the array depend on earlier elements, the updated values of these earlier elements are used in calculation rather than the original ones. 
+
+Input that does NOT induce a failure
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class ArrayTests {
+	@Test 
+	public void testReverseInPlace() {
+        int[] input1 = { 3 };
+        ArrayExamples.reverseInPlace(input1);
+        assertArrayEquals(new int[]{ 3 }, input1);
+    }
+}
+```
+```
+public class ArrayExamples {
+
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length - 1; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+}
+```
+An input array of size one does not induce a failing output as the reversed version of the array would just be the original array.
+
+Symptom
+
+![Image](./images/)
+
+The input array for the failed test should have been modified from {3, 4, 5, 6} to {6, 5, 4, 3}. However, it was modified to {6, 5, 5, 6}. This is the symptom of the bug and is due to the fact that the original values in the array which are being used to determine the new reversed values are also changing as we traverse through the array. 
+
+Bug
+Before:
+```
+public class ArrayExamples {
+
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length - 1; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+}
+```
+After:
+```
+public class ArrayExamples {
+
+  static void reverseInPlace(int[] arr) {
+    int[] tempArr = new int[arr.length];
+    for(int i = 0; i < arr.length - 1; i += 1) {
+      tempArr[i] = arr[arr.length - i - 1];
+    }
+    tempArr[arr.length - 1] = arr[0];
+    
+    for(int i = 0; i < arr.length; i++)
+    {
+        arr[i] = tempArr[i];
+    }
+  }
+  
+}
+```
+To fix the bug, create an empty array of integers ```tempArr```. Then loop through ```arr``` in reverse and add these elements to ```tempArr```. This will ensure that the original values of the input array are reversed and not modified along the way. Finally, initialize ```arr``` with the new values from ```tempArr```.
+
+Part 3:
+Something new that I learned in the past weeks was how to build and run a remote server. I had hosted websites on servers before, but I never really understood what the actual URL path meant until now. Now, I know that the path indicates that the page is running from a local host and we can specify a port number to run it on. I also got to practice using JUnit more and I learned that just because code works on a few tests does not mean it is full proof. It is improtant to conduct further testing to find failure inducing inputs, identify symptoms of them, and be able to come to a solution on how to fix the bug. I learned that a bug is something that does not produce the right output and is not necessarily just any error. 
