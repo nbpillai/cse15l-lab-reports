@@ -7,6 +7,8 @@ In the screenshotted output below, the ```handleRequest``` method is called in m
 
 In my code, I defined a variable ```str``` to hold the string that will be added to and outputted on the page. It is initially initialized as empty. However, by passing ```/add-message?s=hello``` as an argument in the handleRequest method, ```str``` is updated to be ```hello```.
 
+Since the URL containes "/add-message", the first if statement returns true. The path is then split at the equal sign. A String array ```parameters``` is initialized with the string before and after the equal sign. Since the string before the equal sign contains "s", the second element in ```parameters``` (the String the user wants to output) is appended to ```str``` along with a new line. In this case, ```str``` is updated to ```hello``` and this value is returned and outputted on the page.
+
 ```
 import java.io.IOException;
 import java.net.URI;
@@ -33,6 +35,9 @@ class Handler implements URLHandler
 }
 ```
 
-Since the URL containes "/add-message", the first if statement returns true. The path is then split at the equal sign. A String array ```parameters``` is initialized with the string before and after the equal sign. Since the string before the equal sign contains "s", the second element in ```parameters``` (the String the user wants to output) is appended to ```str``` along with a new line. In this case, ```str``` is updated to ```hello``` and this value is returned and outputted on the page.
+It is also important to note that variables are also updated in the main method of the StringServer class. 
+
+
+
 
 ![Image](./images/lab2ss1.png)
