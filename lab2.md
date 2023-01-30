@@ -113,7 +113,7 @@ An input array of size one does not induce a failing output as the reversed vers
 
 Symptom
 
-![Image](./images/lab3SS3)
+![Image](./images/lab3SS3.png)
 
 The input array for the failed test should have been modified from {3, 4, 5, 6} to {6, 5, 4, 3}. However, it was modified to {6, 5, 5, 6}. This is the symptom of the bug and is due to the fact that the original values in the array which are being used to determine the new reversed values are also changing as we traverse through the array. 
 
