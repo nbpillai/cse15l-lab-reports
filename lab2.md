@@ -149,5 +149,5 @@ public class ArrayExamples {
 ```
 To fix the bug, create an empty array of integers ```tempArr```. Then loop through ```arr``` in reverse and add these elements to ```tempArr```. This will ensure that the original values of the input array are reversed and not modified along the way. Finally, initialize ```arr``` with the new values from ```tempArr```.
 
-Part 3:
+## Part 3:
 Something new that I learned in the past weeks was how to build and run a remote server. I had hosted websites on servers before, but I never really understood what the actual URL path meant until now. Now, I know that the path indicates that the page is running from a local host and we can specify a port number to run it on. I also got to practice using JUnit more and I learned that just because code works on a few tests does not mean it is full proof. It is improtant to conduct further testing to find failure inducing inputs, identify symptoms of them, and be able to come to a solution on how to fix the bug. I learned that a bug is something that does not produce the right output and is not necessarily just any error. 
