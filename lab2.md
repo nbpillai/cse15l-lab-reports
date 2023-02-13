@@ -121,6 +121,8 @@ Symptom from Passing Input
 
 <img width="1086" alt="Screen Shot 2023-02-12 at 7 42 37 PM" src="https://user-images.githubusercontent.com/40529489/218365494-66444e18-ec74-4b38-ba6b-4e6eb9bad808.png">
 
+The input array {3} passed as there was only one element in the list, so elements could not be overriden when the faulty reverseInPlace method was called.
+
 Bug Before:
 ```
 public class ArrayExamples {
@@ -148,7 +150,7 @@ public class ArrayExamples {
   
 }
 ```
-To fix the bug, create an empty array of integers ```tempArr```. Then loop through ```arr``` in reverse and add these elements to ```tempArr```. This will ensure that the original values of the input array are reversed and not modified along the way. Finally, initialize ```arr``` with the new values from ```tempArr```.
+To fix the bug, traverse through half of the array. In each loop iteration initailize ```preVal``` to hold the original value at the specified index. Then, set the value at that index to the value in the corresponding position in the second half of the array. Finally, set that element at the second half of the array to the value of the element at the corresponding position in the first half of the array. This will ensure the values do not get overriden as they are modified. 
 
 ## Part 3:
 Something new that I learned in the past weeks was how to build and run a remote server. I had hosted websites on servers before, but I never really understood what the actual URL path meant until now. Now, I know that the path indicates that the page is running from a local host and we can specify a port number to run it on. I also got to practice using JUnit more and I learned that just because code works on a few tests does not mean it is full proof. It is improtant to conduct further testing to find failure inducing inputs, identify symptoms of them, and be able to come to a solution on how to fix the bug. I learned that a bug is something that does not produce the right output and is not necessarily just any error. 
