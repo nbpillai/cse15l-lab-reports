@@ -10,7 +10,7 @@ This command returns a list of all the files that were created or edited after t
 
 #### Example #1
 
-The command below finds all files in the berlitz1 directory that were created or modified before WhatToDublin.txt. 
+The command below finds all files in the berlitz1 directory that were created or modified after WhatToDublin.txt. It can be seen that only a subset of the files in the directory are returned since many of them were created or modified before WhatToDublin.txt.
 
 Command: ``` find written_2/travel_guides/berlitz1 -newer written_2/travel_guides/berlitz1/WhatToDublin.txt```
 
@@ -61,7 +61,7 @@ written_2/travel_guides/berlitz1/WhatToLosAngeles.txt
 ```
 #### Example #2
 
-The command below finds all the files in the berlitz1 directory that were created or modified before WhereToGreek.txt.
+The command below finds all the files in the berlitz1 directory that were created or modified after WhereToGreek.txt. It can be seen that only a subset of the files in the directory are returned since many of them were created or modified before WhereToGreek.txt.
 
 Command: ```find written_2/travel_guides/berlitz1 -newer written_2/travel_guides/berlitz1/WhereToGreek.txt```
 
@@ -203,7 +203,7 @@ This commmand works similarly to ```-name``` but allows you to find files or dir
 
 #### Example #1
 
-The command below finds all files in the Berk directory that start with ch, regardless of whether they are uppercase or lowercase. Thus, it returns ch1.txt, ch2.txt, CH4.txt, and ch7.txt rather than just ch1.txt, ch2.txt, and ch7.txt.
+The command below finds all files in the Berk directory that start with "ch", regardless of whether they are uppercase or lowercase. Thus, it returns ch1.txt, ch2.txt, CH4.txt, and ch7.txt rather than just ch1.txt, ch2.txt, and ch7.txt.
 
 Command: ```find written_2/non-fiction/OUP/Berk -iname "ch*.txt"```
 
@@ -217,7 +217,7 @@ written_2/non-fiction/OUP/Berk/ch7.txt
 
 #### Example #2
 
-The command below finds all files in the Berk directory that start with CH, regardless of whether they are uppercase or lowercase. Thus, it returns ch1.txt, ch2.txt, CH4.txt, and ch7.txt rather than just CH4.txt. It can be seen that, unlike the ```-name``` option, ```-iname``` removes case sensitivity. Thus, this command example has the same output as the previous example. 
+The command below finds all files in the Berk directory that start with "CH", regardless of whether they are uppercase or lowercase. Thus, it returns ch1.txt, ch2.txt, CH4.txt, and ch7.txt rather than just CH4.txt. It can be seen that, unlike the ```-name``` option, ```-iname``` removes case sensitivity. Thus, this command example has the same output as the previous example. 
 
 Command: ```find written_2/non-fiction/OUP/Berk -iname "CH*.txt"```
 
