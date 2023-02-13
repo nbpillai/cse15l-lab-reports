@@ -3,7 +3,7 @@ Nitya Pillai | CSE 15L Thursday 10 am B270
 
 ## the ```find``` command 
 
-[Source Link]([https://link-url-here.org](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/))
+[Source Link](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/)
 
 ### find -newer file
 This command returns a list of all the files that were created or edited after the specified file. It could be useful if we wanted to know files that were recently edited or created with reference to a specific file.
@@ -87,7 +87,7 @@ written_2/travel_guides/berlitz1/WhereToIstanbul.txt
 
 ### find -type
 
-[Source Link]([https://link-url-here.org](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/](https://www.redhat.com/sysadmin/linux-find-command)
+[Source Link](https://www.redhat.com/sysadmin/linux-find-command)
 
 This command outputs only things that match the specified type. For example, -type f only outputs files and -type d only ouputs directories within the path. This would be useful if you want to find only files and not have the command return the directory names too or if you wanted to only find directory names; by default the find command returns directories and files. 
 
@@ -162,5 +162,37 @@ written_2/non-fiction/OUP/Fletcher
 written_2/non-fiction/OUP/Castro
 ```
 
-### find -
+### find -size
+
+[Source Link](https://man7.org/linux/man-pages/man1/find.1.html)
+
+This command allows you to return files that are greater than, less than, or equal to a specified file size. The command is as follows ```find [path] -size [+/-][c/w/b/k/M/G]``` The first argument determines whether we are checking greater than or less than the specifed file size and the second argument specifes the unit of file size measurement. This could be useful if you are trying to keep track of the largest/smallest files in a directory to ensure ample memory space is allocated.
+
+#### Example #1
+
+The command below returns all files in the Abernath directory that have a size greater than 42 KB. The + indicates we are looking for files greater than the specified file size and the k indicates the unit of file size KB.
+
+Command: ```find written_2/non-fiction/OUP/Abernathy -size +42k```
+
+Output:
+```
+written_2/non-fiction/OUP/Abernathy/ch2.txt
+written_2/non-fiction/OUP/Abernathy/ch1.txt
+written_2/non-fiction/OUP/Abernathy/ch8.txt
+written_2/non-fiction/OUP/Abernathy/ch15.txt
+```
+
+#### Example #2
+
+The command below returns all files in the Berk directory that have a size less than 92 KB. The - indicates we are looking for files equal to the specified file size and the k indicates the unit of file size KB. 
+
+Command: ```find written_2/non-fiction/OUP/Berk -size -92k```
+
+Output:
+```
+written_2/non-fiction/OUP/Berk
+written_2/non-fiction/OUP/Berk/ch1.txt
+written_2/non-fiction/OUP/Berk/ch7.txt
+```
+
 
