@@ -111,11 +111,15 @@ public class ArrayExamples {
 ```
 An input array of size one does not induce a failing output as the reversed version of the array would just be the original array.
 
-Symptom
+Symptom from Failure Inducing Input
 
 ![Image](./images/Lab3SS3.png)
 
 The input array for the failed test should have been modified from {3, 4, 5, 6} to {6, 5, 4, 3}. However, it was modified to {6, 5, 5, 6}. This is the symptom of the bug and is due to the fact that the original values in the array which are being used to determine the new reversed values are also changing as we traverse through the array. 
+
+Symptom from Passing Input
+
+<img width="1086" alt="Screen Shot 2023-02-12 at 7 42 37 PM" src="https://user-images.githubusercontent.com/40529489/218365494-66444e18-ec74-4b38-ba6b-4e6eb9bad808.png">
 
 Bug Before:
 ```
@@ -133,16 +137,13 @@ Bug After:
 public class ArrayExamples {
 
   static void reverseInPlace(int[] arr) {
-    int[] tempArr = new int[arr.length];
-    for(int i = 0; i < arr.length - 1; i += 1) {
-      tempArr[i] = arr[arr.length - i - 1];
-    }
-    tempArr[arr.length - 1] = arr[0];
     
-    for(int i = 0; i < arr.length; i++)
-    {
-        arr[i] = tempArr[i];
+    for(int i = 0; i < arr.length/2; i += 1) {
+      int prevVal = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i -1] = prevVal;
     }
+    
   }
   
 }
