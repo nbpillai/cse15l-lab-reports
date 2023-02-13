@@ -5,7 +5,7 @@ Nitya Pillai | CSE 15L Thursday 10 am B270
 
 [Source Link](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/)
 
-### find -newer file
+### 1. find -newer file
 This command returns a list of all the files that were created or edited after the specified file. It could be useful if we wanted to know files that were recently edited or created with reference to a specific file.
 
 #### Example #1
@@ -85,7 +85,7 @@ written_2/travel_guides/berlitz1/WhereToHongKong.txt
 written_2/travel_guides/berlitz1/WhereToIstanbul.txt
 ```
 
-### find -type
+### 2. find -type
 
 [Source Link](https://www.redhat.com/sysadmin/linux-find-command)
 
@@ -162,7 +162,7 @@ written_2/non-fiction/OUP/Fletcher
 written_2/non-fiction/OUP/Castro
 ```
 
-### find -size
+### 3. find -size
 
 [Source Link](https://man7.org/linux/man-pages/man1/find.1.html)
 
@@ -194,5 +194,41 @@ written_2/non-fiction/OUP/Berk
 written_2/non-fiction/OUP/Berk/ch1.txt
 written_2/non-fiction/OUP/Berk/ch7.txt
 ```
+
+### 4. find -iname
+
+[Source Link](https://www.binarytides.com/linux-find-command-examples/)
+
+This commmand works similarly to ```-name``` but allows you to find files or directories with a specific name, ignoring whether it is uppercase or lowercase. This could be useful if you want to find files with the same name but they have inconsistent cases.
+
+#### Example #1
+
+The command below finds all files in the Berk directory that start with ch, regardless of whether they are uppercase or lowercase. Thus, it returns ch1.txt, ch2.txt, CH4.txt, and ch7.txt rather than just ch1.txt, ch2.txt, and ch7.txt.
+
+Command: ```find written_2/non-fiction/OUP/Berk -iname "ch*.txt"```
+
+Output:
+```
+written_2/non-fiction/OUP/Berk/ch2.txt
+written_2/non-fiction/OUP/Berk/ch1.txt
+written_2/non-fiction/OUP/Berk/CH4.txt
+written_2/non-fiction/OUP/Berk/ch7.txt
+```
+
+#### Example #2
+
+The command below finds all files in the Berk directory that start with CH, regardless of whether they are uppercase or lowercase. Thus, it returns ch1.txt, ch2.txt, CH4.txt, and ch7.txt rather than just CH4.txt. It can be seen that, unlike the ```-name``` option, ```-iname``` removes case sensitivity. Thus, this command example has the same output as the previous example. 
+
+Command: ```find written_2/non-fiction/OUP/Berk -iname "CH*.txt"```
+
+Output:
+```
+written_2/non-fiction/OUP/Berk/ch2.txt
+written_2/non-fiction/OUP/Berk/ch1.txt
+written_2/non-fiction/OUP/Berk/CH4.txt
+written_2/non-fiction/OUP/Berk/ch7.txt
+```
+
+
 
 
