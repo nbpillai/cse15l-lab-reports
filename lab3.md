@@ -199,7 +199,7 @@ written_2/non-fiction/OUP/Berk/ch7.txt
 
 [Source Link](https://www.binarytides.com/linux-find-command-examples/)
 
-This commmand works similarly to ```-name``` but allows you to find files or directories with a specific name, ignoring whether it is uppercase or lowercase. This could be useful if you want to find files with the same name but they have inconsistent cases.
+This commmand works similarly to ```-name``` but allows you to find files or directories with a specific name, ignoring whether it is uppercase or lowercase. This could be useful if you want to find files or directories with the same name or name pattern but they have inconsistent cases.
 
 #### Example #1
 
