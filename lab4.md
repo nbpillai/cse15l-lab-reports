@@ -43,9 +43,24 @@ To run the tester file run ```java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.1
 This will result in 1 error. The current code does not pass the second test which tests the merge method. The error will state that there was a timeout error; this means that the program was taking too long to run. In this case, this could indicate that there was an infinite loop.  
 
 ## 7. Edit the code file to fix the failing test
-Open a new nano window to edit the code file by running the command ```nano ListExamples.java```. This will pop up a nano editor that displays the content of the file and allows you to edit it.
+By looking at the code in ListExamples.java, we can see that there is a problem in the third while loop in the ```merge``` method. The while loop continues 
+as long as ```index2 < list2.size()```. However, within the body of the loop we are incrementing index1. This means that ```index2 < list2.size()``` is always going to return true since it ```index2``` is initially set to 0. To fix this issue, we can change ```index1 += 1;``` on line 43 to ```index2 += 1;``` Now, index2 is being incremented each iteration of the while loop, so this will not be an infinite loop.
+
+To do this using command line, open a new nano window to edit the code file by running the command ```nano ListExamples.java```. This will pop up a nano editor that displays the content of the file and allows you to edit it.
+
+TALK ABT NANO COMMANDS HERE
+
+After making these edits. Press ```<ctrl><o><enter>``` to save changes. Then, exit the nano window by pressing ```<ctrl><x><enter>```
 
 ## 8. Run the tests, demonstrating that they now succeed
+Since I ran the test commands previously, I can use the up arrow to get my previous commands rather than typing them all out.
+
+To compile, I ran the command 
+
+To run the tests, I ran the command 
+
+All tests should now pass. 
+
 ## 9. Commit and push the resulting change to your Github account
 First, we have to add the changes that we made. Run the command ```git add ListExamples.java```.
 
