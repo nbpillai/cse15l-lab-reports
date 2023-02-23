@@ -40,7 +40,17 @@ To compile tester file run ```javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.
 
 To run the tester file run ```java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples```
 
-This will result in 1 error.
+This will result in 1 error. The current code does not pass the second test which tests the merge method. The error will state that there was a timeout error; this means that the program was taking too long to run. In this case, this could indicate that there was an infinite loop.  
+
 ## 7. Edit the code file to fix the failing test
+Open a new nano window to edit the code file by running the command ```nano ListExamples.java```. This will pop up a nano editor that displays the content of the file and allows you to edit it.
+
 ## 8. Run the tests, demonstrating that they now succeed
 ## 9. Commit and push the resulting change to your Github account
+First, we have to add the changes that we made. Run the command ```git add ListExamples.java```.
+
+Then we commit the changes with a message. Run the command ```git commit -m "<commit message>"```
+
+Finally, we push our changes using the command ```git push```
+
+You should now be able to see these changes updateed in your forked repository.
