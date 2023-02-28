@@ -26,6 +26,9 @@ You will be taken to the screen below. Confirm the repository is being forked in
 ## 4. Log into ieng6
 Run the command ```ssh cs15lwi23zz@ieng6.ucsd.edu```, replacing zz with your account id. You should now be logged into the remote server.
 
+<img width="629" alt="Screen Shot 2023-02-27 at 6 01 56 PM" src="https://user-images.githubusercontent.com/40529489/221733878-8fa75b28-33e6-4997-9cd6-1da08f4509a6.png">
+
+
 ## 5. Clone your fork of the repository from your Github account
 Click the "code" button on your forked repository. Then switch to the SSH tab within this popup and copy the URL.
 
@@ -34,7 +37,7 @@ Click the "code" button on your forked repository. Then switch to the SSH tab wi
 Go back to your terminal and run the command ```git clone <URL you just copied>```
 
 ## 6. Run the tests, demonstrating that they fail
-Since my previous test runs were very far back in the bash, I will run the command directly. 
+Since my previous test runs were very far back in the bash, I will run the command directly. I entered the directory of the cloned repository by typing ```cd la<tab><enter>```
 
 To compile tester file run ```javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java```
 
@@ -42,24 +45,29 @@ To run the tester file run ```java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.1
 
 This will result in 1 error. The current code does not pass the second test which tests the merge method. The error will state that there was a timeout error; this means that the program was taking too long to run. In this case, this could indicate that there was an infinite loop.  
 
+<img width="571" alt="Screen Shot 2023-02-27 at 6 18 17 PM" src="https://user-images.githubusercontent.com/40529489/221736122-547c43b0-8df3-4253-9082-85ffcf5ddc71.png">
+
 ## 7. Edit the code file to fix the failing test
 By looking at the code in ListExamples.java, we can see that there is a problem in the third while loop in the ```merge``` method. The while loop continues 
 as long as ```index2 < list2.size()```. However, within the body of the loop we are incrementing index1. This means that ```index2 < list2.size()``` is always going to return true since it ```index2``` is initially set to 0. To fix this issue, we can change ```index1 += 1;``` on line 43 to ```index2 += 1;``` Now, index2 is being incremented each iteration of the while loop, so this will not be an infinite loop.
 
 To do this using command line, open a new nano window to edit the code file by running the command ```nano ListExamples.java```. This will pop up a nano editor that displays the content of the file and allows you to edit it.
 
-TALK ABT NANO COMMANDS HERE
+Then to get to the correct line type ```<ctrl><w> index1 += 1 <down><down><down><down>```. Then change ```index1 += 1``` to ```index2 += 1```.
 
-After making these edits. Press ```<ctrl><o><enter>``` to save changes. Then, exit the nano window by pressing ```<ctrl><x><enter>```
+After making these edits. Press ```<ctrl><o><enter>``` to save changes. Then, exit the nano window by pressing ```<ctrl><x>```
 
 ## 8. Run the tests, demonstrating that they now succeed
 Since I ran the test commands previously, I can use the up arrow to get my previous commands rather than typing them all out.
 
-To compile, I ran the command 
+To compile, I ran the command <up arrow><up arrow><up arrow><enter> since the command was in my bash history. 
 
-To run the tests, I ran the command 
+To run the tests, I ran the command <up arrow><up arrow><up arrow><enter> since the command was in my bash history.
 
 All tests should now pass. 
+<img width="516" alt="Screen Shot 2023-02-27 at 6 14 37 PM" src="https://user-images.githubusercontent.com/40529489/221735596-e35ce9f8-f71d-444d-abe7-fd37806bb7f9.png">
+
+
 
 ## 9. Commit and push the resulting change to your Github account
 First, we have to add the changes that we made. Run the command ```git add ListExamples.java```.
