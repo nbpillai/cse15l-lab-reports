@@ -57,6 +57,9 @@ Then to get to the correct line type ```<ctrl><w> index1 += 1 <down><down><down>
 
 After making these edits. Press ```<ctrl><o><enter>``` to save changes. Then, exit the nano window by pressing ```<ctrl><x>```
 
+<img width="578" alt="Screen Shot 2023-02-27 at 6 25 15 PM" src="https://user-images.githubusercontent.com/40529489/221737199-a90c932c-166e-423c-baa5-15d9db8092b2.png">
+
+
 ## 8. Run the tests, demonstrating that they now succeed
 Since I ran the test commands previously, I can use the up arrow to get my previous commands rather than typing them all out.
 
