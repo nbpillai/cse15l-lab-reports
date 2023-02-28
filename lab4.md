@@ -78,5 +78,7 @@ First, we have to add the changes that we made. Run the command ```git add ListE
 Then we commit the changes with a message. Run the command ```git commit -m "<commit message>"```
 
 Finally, we push our changes using the command ```git push```
+  
+<img width="578" alt="Screen Shot 2023-02-27 at 6 27 05 PM" src="https://user-images.githubusercontent.com/40529489/221737455-526a571e-1239-4bfd-b19f-64db25316c98.png">
 
 You should now be able to see these changes updateed in your forked repository.
