@@ -3,9 +3,9 @@ Nitya Pillai | CSE 15L Thursday 10 am B270
 
 ## the ```grep``` command 
 
+### 1. grep -i \<pattern> \<file>
 [Source Link](https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html)
 
-### 1. grep -i \<pattern> \<file>
 This command returns a list of all the lines in the listed files that contain the given pattern, ignoring the case. It could be useful if we wanted to know which lines contained a patten but we didn't care about whether uppercase or lowercase was preserved.
 
 #### Example #1
